@@ -39,6 +39,9 @@ async def remember_case(
         dataset_name="ethics_cases",
         node_set=["ethics_case", domain]
     )
+    
+    await cognee.cognify()
+    
     return {
         "node_ref": str(result.items[0]["id"]),
         "dataset_ref": str(result.dataset_id)
